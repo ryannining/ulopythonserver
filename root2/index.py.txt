@@ -1,0 +1,236 @@
+put=echo.text.append
+try:
+  put("<!DOCTYPE html PUBLIC \"-//WAPFORUM//DTD XHTML Mobile 1.2//EN\" \"http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\" id=\"bp-doc\"> ")
+  put("<head> ")
+  put("<title>Audit Lapangan ")
+  put("</title> ")
+  put("<script src=\"js/jquery-1.4.2.min.js\"></script> ")
+  put("<script src=\"js/json2.js\"></script> ")
+  put("<script> ")
+  put("jq=jQuery; ")
+  put("</script> ")
+  fz='10px arial';
+  put("<style> ")
+  put(" body {font:%s;  background:#fff;padding:0;margin:0; "%(fz))
+  put("} ")
+  put('')
+  put(" .wndbox { ")
+  put("  position:absolute; ")
+  put("  left:0; ")
+  put("  top:0; ")
+  put("  right:0; ")
+  put("  bottom:0; ")
+  put("  padding:10px; ")
+  put("  background:#fff; ")
+  put("  z-index:100; ")
+  put(" } ")
+  put(" .taskbar { ")
+  put("  position:absolute; ")
+  put("  bottom:0; ")
+  put("  right:0; ")
+  put("  margin-left:0; ")
+  put("  left:0; ")
+  put("  height:40px; ")
+  put("  background:#eee; ")
+  put("  padding:10px; ")
+  put("  z-index:0; ")
+  put(" } ")
+  put(" .taskbar .goback { ")
+  put("  border:0; ")
+  put("  width:32px; ")
+  put("  height:32px; ")
+  put("  background:url(img/go-previous.png); ")
+  put("  left:164px; ")
+  put("  position:absolute; ")
+  put(" } ")
+  put(" .taskbar .goexit { ")
+  put("  border:0; ")
+  put("  width:32px; ")
+  put("  height:32px; ")
+  put("  background:url(img/system-log-out.png); ")
+  put("  left:234px; ")
+  put("  position:absolute; ")
+  put(" } ")
+  put(" .taskbar .gohome { ")
+  put("  border:0; ")
+  put("  width:32px; ")
+  put("  height:32px; ")
+  put("  background:url(img/go-home.png); ")
+  put("  left:234px; ")
+  put("  position:absolute; ")
+  put(" } ")
+  put(" .taskbar .godata { ")
+  put("  border:0; ")
+  put("  width:32px; ")
+  put("  height:32px; ")
+  put("  background:url(img/edit-find.png); ")
+  put("  left:304px; ")
+  put("  position:absolute; ")
+  put(" } ")
+  put(" .alerter { ")
+  put("  border-radius:10px; ")
+  put("  border:1px solid #888; ")
+  put("  background:#a22; ")
+  put("  color:#fff; ")
+  put("  height:auto; ")
+  put("  left:20px; ")
+  put("  right:20px; ")
+  put("  top:auto; ")
+  put("  bottom:70px; ")
+  put("  margin-top:-150px; ")
+  put("  position:fixed; ")
+  put("  padding:10px; ")
+  put("  z-index:10000; ")
+  put("  box-shadow: 0px 1px 8px #000; ")
+  put(" } ")
+  put(" .hider { ")
+  put("  position:fixed; ")
+  put("  z-index:9000; ")
+  put("  background:#000; ")
+  put("  opacity:0.5; ")
+  put("  left:0;top:0;right:0;bottom:0; ")
+  put(" } ")
+  put(" .alerter p { ")
+  put("  border-radius:5px; ")
+  put("  font:%s;color:#fff; "%(fz))
+  put("  padding:5px; ")
+  put("  position:relative; ")
+  put(" } ")
+  put(" .alerter h1 { ")
+  put("  font:16pt arial;color:#fff;font-weight:bold;text-align:center;position:absolute; ")
+  put("  left:10px;top:0px;right:10px; ")
+  put(" } ")
+  put(" .alerter button {position:relative;width:100px;left:50%;margin-left:-50px} ")
+  put('')
+  put(" input[type=text] {border-radius:4px;border:1px solid #888;padding:3px;font:%s} "%(fz))
+  put(" textarea {border-radius:4px;border:1px solid #888;padding:3px;font:%s} "%(fz))
+  put(" select {padding:3px;} ")
+  put(" .wndbox .title { ")
+  put("  display:block; ")
+  put("  border-radius:10px 10px 0 0; ")
+  put("  left:0;top:0;right:0;height:25px; ")
+  put("  padding:5px; ")
+  put("  vertical-align:center; ")
+  put("  text-align:center; ")
+  put("  font:16px arial; ")
+  put("  background:#888; ")
+  put("  color:#fff; ")
+  put(" } ")
+  put(" .radius {  border-radius:10px;} ")
+  put(" .wndbox .info { ")
+  put("  display:block; ")
+  put("  left:0;top:0;right:0;height:auto; ")
+  put("  border-radius:0 0 10px 10px; ")
+  put("  padding:5px; ")
+  put("  vertical-align:center; ")
+  put("  text-align:center; ")
+  put("  font:13px arial; ")
+  put("  background:#383; ")
+  put("  color:#fff; ")
+  put(" } ")
+  put(" .wndbox .content { ")
+  put("  position:relative; ")
+  put("  left:0;margin-top:20px;right:0;bottom:0px; ")
+  put(" } ")
+  put(" .menu {display:block;background:#ccffcc; ")
+  put("        } ")
+  put(" .bt200 {width:300px} ")
+  put(" .bt300 {width:300px} ")
+  put(" .btimage {border:0;background:none;text-decoration:none} ")
+  put(" a img {text-decoration:none;border:0} ")
+  put(" .abarcode {border-radius:5px;background:#000;color:#fff;font-weight:bold;padding:3px;margin:0;cursor:pointer;border:2px solid white;display:inline-block} ")
+  put("</style> ")
+  put("</head> ")
+  put("<html> ")
+  put('')
+  put("<body> ")
+  alert=''
+  alertcolor='#a22'
+  session_start()
+  sdb=sqlite3.connect('database.sdb')
+  
+  cur=sdb.cursor()
+  def query(sql):
+    print sql
+    cur.execute(sql)
+    return cur.fetchall()
+  def qexec(sql):
+    print sql
+    cur.execute(sql)
+       
+  if form.aksi=='pilihklien':
+    session.idauditmain=form.idauditmain
+    form.view='pilihprinsip'
+  if form.aksi=='pilihprinsip':
+    session.prinsip=form.prinsip
+    form.view='prinsip'+form.prinsip
+  def fillcombo(sql,sel=None):
+    print "fillcombo "+sql
+    cur.execute(sql)
+    for row in cur:
+      a="";
+      
+      if str(row[0])==str(sel):a="selected"
+      put("<option value=\"%s\" %s>%s</option> "%(row[0],a,row[1]))
+  def fillcombo1(sql,sel=None):
+    print "fillcombo1"+sql
+    cur.execute(sql)
+    for row in cur:
+      a="";
+      
+      if str(row[0])==str(sel):a="selected"
+      put("<option value=\"%s\" %s>%s</option> "%(row[0],a,row[0]))
+  def fillcombo3(sql,sel=None):
+    print "fillcombo"
+    cur.execute(sql)
+    for row in cur:
+      a="";
+      
+      if str(row[0])==str(sel):a="selected"
+      put("<option value=\"%s\" filter=\"%s\" %s>%s</option> "%(row[0],row[2],a,row[1]))
+    
+  print form.view,':::'
+  if(not form.view):form.view='pilihklien'
+  if (form.view=='pilihklien'):
+    klien=query("select idauditmain,klien,tanggal from auditsvlkmain where status=1")
+    put("<table width=100% border=0> ")
+    put("<tr><td colspan=3><b>PILIH KLIEN AUDIT SVLK</b> ")
+    n=1
+    for k in klien:
+      put("<tr><td>%s<td><a href=\"index.py?aksi=pilihklien&idauditmain=%s\">%s</a><td>%s "%(n,k[0],k[1],k[2]))
+      n+=1
+    put("</table> ")
+  if form.view=='pilihprinsip':
+    put("<table width=100% border=0> ")
+    put("<tr><td colspan=2><b>PILIH DOKUMEN AUDIT</b><br> ")
+    put("<tr><td>1<td><a href='index.py?aksi=pilihprinsip&prinsip=1'>PRINSIP 1</a> ")
+    put("<tr><td>2<td><a href='index.py?aksi=pilihprinsip&prinsip=2'>PRINSIP 2</a> ")
+    put("<tr><td>3<td><a href='index.py?aksi=pilihprinsip&prinsip=3'>PRINSIP 3</a> ")
+    put("</table> ")
+  if form.ver:
+    form.view='prinsip'+session.prinsip  
+  if form.view=='prinsip1':
+    data=query("select klien,tanggal,b.data from auditsvlkmain a left join auditsvlk b on (a.idauditmain=b.idauditmain and b.prinsip=%s) where a.idauditmain='%s'"%(session.prinsip,session.idauditmain))
+    data=data[0]
+    put("<B>AUDIT PRINSIP 1</B><BR> ")
+    put("Klien: %s<br> "%(data[0]))
+    put("Tanggal: %s<hr> "%(data[1]))
+    
+    include('prinsip1.py')    
+  if form.view=='prinsip3':
+    data=query("select klien,tanggal,b.data from auditsvlkmain a left join auditsvlk b on (a.idauditmain=b.idauditmain and b.prinsip=%s) where a.idauditmain='%s'"%(session.prinsip,session.idauditmain))
+    data=data[0]
+    put("<B>AUDIT PRINSIP 3</B><BR> ")
+    put("Klien: %s<br> "%(data[0]))
+    put("Tanggal: %s<hr> "%(data[1]))
+    
+    include('prinsip3.py')    
+  put("</body> ")
+  put('')
+finally:
+  print "Closing DB"
+  try:
+    sdb.commit()
+    sdb.close()
+  except:pass
+  

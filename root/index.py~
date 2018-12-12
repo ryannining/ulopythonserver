@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" id="bp-doc">
+<head>
+<title>Aplikasi Entry Data
+</title>
+<body>
+Hello World from static<br>
+<?
+myname='Ryan Widi'
+@Hello World from dynamic, my name is $(myname)
+if myname=='asd':
+    @Yes
+    
+?>
+</body>
+</head>

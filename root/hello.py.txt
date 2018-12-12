@@ -1,0 +1,5 @@
+put=echo.text.append
+try:
+  put("Hello world")
+  put('')
+finally:pass#

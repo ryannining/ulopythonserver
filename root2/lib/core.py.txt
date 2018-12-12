@@ -1,0 +1,6 @@
+put=echo.text.append
+try:
+  session_start()
+  ses=session
+  put('\n')
+finally:pass

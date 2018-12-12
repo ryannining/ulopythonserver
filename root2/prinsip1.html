@@ -1,0 +1,57 @@
+<style>
+ textarea {width:95%}
+ .warna1 {color:rgb(16,128,255);font-weight:bold}
+ .bukti {color:rgb(16,128,255);font-weight:bold}
+ .verifier td {background:rgb(16,128,255);color:#fff;font-weight:bold}
+ .verifier a {color:#fff}
+ .save {background:#eee;padding:5px 0 40px 0;text-align:center;height:50px}
+ .daftarisi {font:14px arial}
+ .wideinput {width:95%}
+ .shortinput {width:55%}
+ .middletd {width:25%;min-width:150px}
+ .lefttd {width:30px}
+ tr>td {vertical-align:top;padding-bottom:3px;min-height:40px} 
+</style>
+<!
+if form.ver:
+  include("p1ver$(form.ver).html")
+  
+<table cellspacing=0 cellpadding=0  width=100% class="daftarisi"><tr align=center><td colspan=2>
+<a name=atas></a>
+<b>Daftar isi</b><br>
+<tr align=center><td>
+<a href="index.php?ver=1.1.1.a">Verifier 1.1.1.a</a><br>
+<a href="index.php?ver=1.1.1.b">Verifier 1.1.1.b</a><br>
+<a href="index.php?ver=1.1.1.c">Verifier 1.1.1.c</a><br>
+<a href="index.php?ver=1.1.1.d">Verifier 1.1.1.d</a><br>
+<a href="index.php?ver=1.1.1.e">Verifier 1.1.1.e</a><br>
+<a href="index.php?ver=1.1.1.f">Verifier 1.1.1.f</a><br>
+<a href="index.php?ver=1.1.1.g">Verifier 1.1.1.g</a><br>
+<td>
+<a href="index.php?ver=1.1.2.a">Verifier 1.1.2.a</a><br>
+<a href="index.php?ver=1.1.2.b">Verifier 1.1.2.b</a><br>
+<a href="index.php?ver=1.1.2.c">Verifier 1.1.2.c</a><br>
+<a href="index.php?ver=1.1.2.d">Verifier 1.1.2.d</a><br>
+<a href="index.php?ver=1.1.2.e">Verifier 1.1.2.e</a><br>
+<a href="index.php?ver=1.1.2.f">Verifier 1.1.2.f</a><br>
+<a href="index.php?ver=1.1.2.g">Verifier 1.1.2.g</a><br>
+</table>
+<br><br>
+<script>
+var verifier='1.1.1.a,1.1.1.b,1.1.1.c,1.1.1.d,1.1.1.e,1.1.1.f,1.1.1.g,1.1.2.a,1.1.2.b,1.1.2.c,1.1.2.d,1.1.2.e,1.1.2.f,1.1.2.g,1.1.2.h'.split(',');
+function loadverifier(ver){
+  jg.ajax({url:'service.py?call=loadverifierdata&vefifier='+ver,success:function(x){
+      data=JSON.parse(x);
+    }
+  });
+}
+function saveverifier(par){
+  
+}
+jq('button').each(function(x){
+  var jt=jq(this);
+  if (jt.attr('verifier')){
+    jt.click(function xsave(){saveverifier(jt);});  
+  }
+});
+</script>

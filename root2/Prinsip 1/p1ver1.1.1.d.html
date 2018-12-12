@@ -1,0 +1,110 @@
+<table cellspacing=0 cellpadding=0  border="0" width=100% bgcolor=#eee verifier="1.1.1.d">
+	 <tr class=verifier>
+      <td><a name="1.1.1.d"></a>1.1.1.d.</td>
+      <td colspan="2">Nomor Pokok Wajib Pajak (NPWP) bisa lebih dari satu <a href='#atas' style='float:right'>Kembali</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td colspan="2" class=bukti>Bukti Audit </td>
+    </tr>
+</table>	
+<table cellspacing=0 cellpadding=0  border="0" width=100% bgcolor=#eee group=npwp  verifier="1.1.1.d">
+<tr><td><td colspan=2><b>DATA NPWP KE #THECTR</b>
+	<tr>
+      <td class=lefttd></td>
+      <td class=middletd>Nomor NPWP</td>
+      <td><input name="npwp1d" type="text" class=wideinput /></td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Tanggal Terdaftar</td>
+      <td><input name="tgldaftar1d" type="text" class=wideinput /></td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Nama Perusahaan</td>
+      <td><input name="namaperusahaan1d" type="text" class=wideinput /></td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Alamat Perusahaan</td>
+      <td>
+          <textarea name="alamatperusahaan1d" rows="2" ></textarea>
+        
+      </td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Instansi Yang Menerbitkan</td>
+      <td><input name="instansipenerbit1d" type="text" class=wideinput /></td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Klasifikasi Lapangan Usaha (KLU)</td>
+      <td><input name="klasifikasiusaha1d" type="text" class=wideinput /></td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Status Modal</td>
+      <td><input name="statusmodal1d" type="text" class=wideinput /></td>
+    </tr>
+	 <tr>
+      <td></td>
+      <td>Status Usaha</td>
+      <td><input name="statususaha1d" type="text" class=wideinput /></td>
+    </tr>
+	 <tr>
+      <td></td>
+      <td>No. SKT</td>
+      <td><input name="skt1d" type="text" class=wideinput /></td>
+    </tr>
+	 <tr>
+      <td></td>
+      <td>No. SPPKD</td>
+      <td><input name="sppkd1d" type="text" class=wideinput /></td>
+    </tr>
+	 <tr>
+	  <td></td>
+	    <td></td>
+		 </tr>
+</table>
+<table cellspacing=0 cellpadding=0  style="width: 100%" verifier="1.1.1.d">
+<tr class=tambah><td colspan=3><button onclick="tambahnpwp()">Tambah NPWP</button>
+	  <tr>
+      <td class=lefttd></td>
+      <td class=middletd class=warna1>Analisis</td>
+      <td>
+          <textarea name="analisis1d" rows="4" >Disini ditulis uraian yang banyak</textarea>
+        
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class=warna1>Norma Penilaian</td>
+      <td>Memenuhi : NPWP pelaku usaha tersedia </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class=warna1>Kesimpulan</td>
+       <td><input type="radio" name="kesimpulan1d" value=k1 checked="checked" />Memenuhi <br>
+       <input type="radio" name="kesimpulan1d" value=k2  />Memenuhi Dengan Catatan <br>
+       <input type="radio" name="kesimpulan1d" value=k3  />Tidak Memenuhi <br>
+       <input type="radio" name="kesimpulan1d" value=k4  />N/A</td>
+    </tr>
+    <tr class=save><td colspan=3><button verifier="1.1.1.d">Save Verifier</button>
+</table>
+<script>
+var formnpwp=jq('[group=npwp]').html();
+var npwpctr=0;
+jq('[group=npwp]').html('');
+function tambahnpwp(){
+  npwpctr++;
+	jq('[group=npwp]').append(formnpwp.replace(/THECTR/g,npwpctr));
+}
+function beforefillthisform(data){
+	npwp=data['npwp1d'];
+	for (i=0;i<npwp.length;i++){
+		tambahnpwp();
+	}
+}
+</script>

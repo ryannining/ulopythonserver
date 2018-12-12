@@ -1,0 +1,117 @@
+<table cellspacing=0 cellpadding=0  width=100% verifier="1.1.1.f">
+	 <tr class=verifier>
+      <td width=30><a name="1.1.1.f"></a>1.1.1.f.</td>
+      <td colspan="2">Izin Usaha Industri (IUI) atau Tanda Daftar Industri (TDI) <a href='#atas' style='float:right'>Kembali</a></td>
+    </tr>
+   <tr>
+      <td></td>
+      <td colspan="2" class=bukti>Bukti Audit LEBIH DARI SATU</td>
+    </tr>
+	<tr>
+      <td></td>
+	 <td colspan="2">Izin Usaha Industri (IUI) :</td>
+         </tr>
+</table>
+<table cellspacing=0 cellpadding=0  width=100% bgcolor=#eee group=iui verifier="1.1.1.f">
+<tr><td><td colspan=2><b>DATA IUI KE #THECTR</b>
+	 <tr>
+      <td class=lefttd></td>
+      <td class=middletd>Nomor Izin</td>
+      <td><input name="nomorizin1f" type="text" class=wideinput /></td>
+    </tr>
+	 <tr>
+      <td></td>
+      <td>Tanggal</td>
+      <td><input name="tanggal1f" type="text" class=wideinput /></td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Lokasi</td>
+      <td>
+          <textarea name="lokasi1f" rows="2" >Disini ditulis uraian yang banyak</textarea>
+        
+      </td>
+    </tr>
+	<tr>
+      <td></td>
+      <td>Bidang Usaha</td>
+      <td>
+          <textarea name="bidangusaha1f" rows="2" >Disini ditulis uraian yang banyak</textarea>
+        
+      </td>
+    </tr>
+		<tr>
+      <td></td>
+      <td>Instansi Penerbit</td>
+      <td><input name="instansipenerbit1f" type="text" class=wideinput /></td>
+    </tr>
+</table>
+<table cellspacing=0 cellpadding=0  width=100% verifier="1.1.1.f">    
+<tr class=tambah><td colspan=3><button onclick="tambahiui()">Tambah IUI</button>
+	<tr>
+      <td></td>
+	 <td colspan="2">Produk dan Kapasitas yang Diizinkan LEBIH DARI SATU :</td>
+         </tr>
+	<tr bgcolor=#eee>
+      <td class=lefttd><td colspan=2>
+      <table width=100% cellspacing=0 cellpadding=0 group=produk verifier='1.1.1.f'>
+      <tr align=center><td>Jenis Produk<td>Kapasitas<td>Satuan
+      <tr group=produk><td><input name="jenisproduk1f" type="text" size="30" /></td>
+       <td><input name="kapasitas1f" type="text" size="10" /> 
+       <td><input type="radio" name="satf(THECTR)" checked="checked" />M3 <input type="radio" name="satfTHECTR" />Ton </td>
+      </table>       
+    </tr>
+    <tr class=tambah><td colspan=3><button onclick="tambahproduk()">Tambah Produk</button>
+	<tr>
+      <td></td>
+       <td></td>
+    </tr>
+	 <tr>
+      <td class=lefttd></td>
+      <td class=middletd class=warna1>Analisis</td>
+      <td>
+          <textarea name="analisis1f" rows="4" >Disini ditulis uraian yang banyak</textarea>
+        
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class=warna1>Norma Penilaian</td>
+      <td>Memenuhi :IUI atau TDI sesuai dengan kegiatan usaha dan kapasitas yang dilakukan dan instansi yang berwenang memberikannya </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class=warna1>Kesimpulan</td>
+      <td><input type="radio" name="kesimpulan1f" value=k1 checked="checked" />Memenuhi <br>
+      <input type="radio" name="kesimpulan1f" value=k2 />Memenuhi Dengan Catatan <br>
+      <input type="radio" name="kesimpulan1f" value=k3 />Tidak Memenuhi <br>
+      <input type="radio" name="kesimpulan1f" value=k4 />N/A</td>
+    </tr>
+    <tr class=save><td colspan=3><button verifier="1.1.1.f">Save Verifier</button>
+</table>
+<script>
+var formiui=jq('[group=iui]').html();
+var formproduk='<tr align=center>'+jq('tr[group=produk]').html();
+var iuictr=0;
+var produkctr=0;
+jq('[group=iui]').html('');
+jq('tr[group=produk]').remove();
+function tambahiui(){
+  iuictr++;
+	jq('table[group=iui]').append(formiui.replace(/THECTR/g,iuictr));
+}
+function tambahproduk(){
+  produkctr++;
+	jq('table[group=produk]').append(formproduk.replace(/THECTR/g,iuictr));
+}
+function beforefillthisform(data){
+  iui=data['nomorizin1f'];
+	for (i=0;i<iui.length;i++){
+		tambahiui();
+	}
+	prod=data['kapasitas1f'];
+	for (i=0;i<prod.length;i++){
+		tambahproduk();
+	}
+}
+</script>
